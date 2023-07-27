@@ -3,23 +3,50 @@ import { Button, Form } from "react-bootstrap";
 
 const FormPeliculas = () => {
   const [formValue, setformValue] = useState({
-    id: null,
     nombrePeli: "",
     descripcionPeli: "",
     categoriaPeli: "",
   });
 
-  let { id, nombrePeli, descripcionPeli, categoriaPeli } = formValue;
+  const [listaPeliculas, setListaPeliculas] = useState([]);
+
+  let { nombrePeli, descripcionPeli, categoriaPeli } = formValue;
 
   const handleChange = (e) => {
     setformValue({ ...formValue, [e.target.name]: e.target.value });
+  };
+
+  const crearPelicula = (data) => {
+    let peliculaEncontrada = listaPeliculas.find(
+      (pelicula) => pelicula.nombrePeli === data.nombrePeli
+    );
+
+    if (peliculaEncontrada) {
+      console.log("Esta pelicula ya existe");
+    } else {
+      setListaPeliculas([...listaPeliculas, formValue]);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (
+      nombrePeli.trim() === "" ||
+      descripcionPeli.trim() === "" ||
+      categoriaPeli === ""
+    ) {
+      console.log("Debe de llenar el formulario");
+    } else {
+      crearPelicula(formValue);
+      console.log(listaPeliculas);
+    }
   };
 
   return (
     <section className="container">
       <div className="row justify-content-center">
         <div className="col-11 col-lg-8 bg-light p-3">
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="nombrePeli">
               <Form.Label>Titulo</Form.Label>
               <Form.Control
@@ -50,7 +77,7 @@ const FormPeliculas = () => {
                 value={categoriaPeli}
                 onChange={handleChange}
               >
-                <option value="" selected disabled>
+                <option value="" defaultValue disabled>
                   Selecciona una categoría
                 </option>
                 <option value="comedia">Comedia</option>
@@ -59,9 +86,11 @@ const FormPeliculas = () => {
               </Form.Select>
             </Form.Group>
 
-            <Button variant="primary" type="submit">
-              Guardar
-            </Button>
+            <div className="d-grid justify-content-end mb-3">
+              <Button variant="primary" type="submit">
+                Guardar
+              </Button>
+            </div>
           </Form>
         </div>
       </div>
