@@ -1,5 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import FormPeliculas from "./components/FormPeliculas";
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
         </h4>
         <hr />
       </header>
-      <main></main>
+      <main>
+        <FormPeliculas />
+      </main>
       <footer>
         <hr />
         <h6 className="text-center my-3">
