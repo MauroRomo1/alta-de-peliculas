@@ -3,7 +3,7 @@ const CardPelicula = ({ pelicula }) => {
     <article className="col">
       <div className="card h-100">
         <div className="card-header">
-          <h5 className="card-title text-center">{pelicula.nombrePeli}</h5>
+          <h6 className="card-title text-center">{pelicula.nombrePeli}</h6>
         </div>
         <div className="card-body">
           <p>

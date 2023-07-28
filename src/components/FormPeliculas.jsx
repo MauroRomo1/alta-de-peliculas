@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import ListaPeliculas from "./ListaPeliculas";
 
@@ -9,9 +9,16 @@ const FormPeliculas = () => {
     categoriaPeli: "",
   });
 
-  const [listaPeliculas, setListaPeliculas] = useState([]);
+  let peliculasLocalStorage =
+    JSON.parse(localStorage.getItem("peliculas")) || [];
+
+  const [listaPeliculas, setListaPeliculas] = useState(peliculasLocalStorage);
 
   let { nombrePeli, descripcionPeli, categoriaPeli } = formValue;
+
+  useEffect(() => {
+    localStorage.setItem("peliculas", JSON.stringify(listaPeliculas));
+  }, [listaPeliculas]);
 
   const handleChange = (e) => {
     setformValue({ ...formValue, [e.target.name]: e.target.value });
@@ -19,7 +26,7 @@ const FormPeliculas = () => {
 
   const crearPelicula = (data) => {
     let peliculaEncontrada = listaPeliculas.find(
-      (pelicula) => pelicula.nombrePeli === data.nombrePeli
+      (pelicula) => pelicula.nombrePeli.trim() === data.nombrePeli.trim()
     );
 
     if (peliculaEncontrada) {

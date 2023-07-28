@@ -3,11 +3,11 @@ import CardPelicula from "./CardPelicula";
 const ListaPeliculas = ({ listaPeliculas }) => {
   return (
     <section className="container bg-white my-5">
-      <h3 className="text-center">
+      <h3 className="text-center my-3">
         <img
           src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Film%20Frames.png"
           alt="Film Frames"
-          className="my-3 iconFilmFrames"
+          className="iconFilmFrames"
         />
         Lista de peliculas
       </h3>
