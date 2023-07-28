@@ -14,13 +14,11 @@ function App() {
             className="iconClapperBoard"
           />
         </h4>
-        <hr />
       </header>
       <main>
         <FormPeliculas />
       </main>
       <footer>
-        <hr />
         <h6 className="text-center my-3">
           &copy; todos los derechos reservados
         </h6>

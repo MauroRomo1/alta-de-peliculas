@@ -61,7 +61,7 @@ const FormPeliculas = () => {
     <>
       <section className="container my-4">
         <div className="row justify-content-center">
-          <div className="col-11 col-xl-8 bg-light p-3">
+          <div className="col-11 col-xl-8 shadow p-3">
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="nombrePeli">
                 <Form.Label>Titulo</Form.Label>

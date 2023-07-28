@@ -1,7 +1,7 @@
 const CardPelicula = ({ pelicula, eliminarPelicula }) => {
   return (
     <article className="col">
-      <div className="card h-100">
+      <div className="card shadow h-100">
         <div className="card-header">
           <h6 className="card-title text-center">{pelicula.nombrePeli}</h6>
         </div>
