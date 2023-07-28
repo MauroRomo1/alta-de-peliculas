@@ -43,6 +43,11 @@ const FormPeliculas = () => {
         timer: 1500,
       });
       setListaPeliculas([...listaPeliculas, formValue]);
+      setformValue({
+        nombrePeli: "",
+        descripcionPeli: "",
+        categoriaPeli: "",
+      });
     }
   };
 
