@@ -1,27 +1,19 @@
+import CardPelicula from "./CardPelicula";
+
 const ListaPeliculas = ({ listaPeliculas }) => {
   return (
     <section className="container bg-white my-5">
+      <h3 className="text-center">
+        <img
+          src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Film%20Frames.png"
+          alt="Film Frames"
+          className="my-3 iconFilmFrames"
+        />
+        Lista de peliculas
+      </h3>
       <div className="row row-cols-1 row-cols-md-3 g-4">
         {listaPeliculas.map((pelicula) => (
-          <article className="col">
-            <div className="card h-100">
-              <div className="card-body">
-                <h5 className="card-title text-center">
-                  {pelicula.nombrePeli}
-                </h5>
-                <p>
-                  Categoria:{" "}
-                  <span className="badge text-bg-primary">
-                    {pelicula.categoriaPeli}
-                  </span>
-                </p>
-                <p className="card-text">{pelicula.descripcionPeli}</p>
-              </div>
-              <div className="card-footer d-grid">
-                <button className="btn btn-danger">Borrar</button>
-              </div>
-            </div>
-          </article>
+          <CardPelicula key={pelicula.nombrePeli} pelicula={pelicula} />
         ))}
       </div>
     </section>
