@@ -1,8 +1,25 @@
-# React + Vite
+<h1 align="center">
+  Formulario para dar de alta peliculas
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Clapper%20Board.png" alt="Clapper Board" width="50" height="50" />
+</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+página en la cual podrás crear una card con los datos de una película, los cuales habran sido cargados en un fomulario que pide el nombre, descripcion y categoria de la película
+![image](https://github.com/MauroRomo1/alta-de-peliculas/assets/82526247/20c5db91-eb53-41b0-b672-3a2b0053c1cd)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+<h3>Para clonar este proyecto copie y pege uno por uno los siguientes comandos en una terminal</h3>
+
+- Paso 1:
+```
+git clone https://github.com/MauroRomo1/alta-de-peliculas.git
+```
+
+- Paso 2:
+```
+npm install
+```
+- Paso 3:
+```
+npm run dev
+```
