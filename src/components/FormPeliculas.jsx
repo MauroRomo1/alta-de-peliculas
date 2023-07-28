@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import ListaPeliculas from "./ListaPeliculas";
+import Swal from "sweetalert2";
 
 const FormPeliculas = () => {
   const [formValue, setformValue] = useState({
@@ -30,8 +31,17 @@ const FormPeliculas = () => {
     );
 
     if (peliculaEncontrada) {
-      console.log("Esta pelicula ya existe");
+      Swal.fire({
+        icon: "error",
+        title: "<h5>Esta pelicula ya existe en la lista</h5>",
+      });
     } else {
+      Swal.fire({
+        icon: "success",
+        title: "<h4>Pelicula agregada</h4>",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       setListaPeliculas([...listaPeliculas, formValue]);
     }
   };
@@ -43,10 +53,12 @@ const FormPeliculas = () => {
       descripcionPeli.trim() === "" ||
       categoriaPeli === ""
     ) {
-      console.log("Debe de llenar el formulario");
+      Swal.fire({
+        icon: "error",
+        title: "<h5>Debes de llenar todos los campos</h5>",
+      });
     } else {
       crearPelicula(formValue);
-      console.log(listaPeliculas);
     }
   };
 
@@ -113,7 +125,7 @@ const FormPeliculas = () => {
       </section>
 
       {listaPeliculas.length === 0 ? (
-        <h3 className="text-center text-white my-3">
+        <h3 className="text-center my-3">
           <img
             src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Film%20Projector.png"
             alt="Film Projector"
