@@ -50,6 +50,13 @@ const FormPeliculas = () => {
     }
   };
 
+  const eliminarPelicula = (peliculaBorrar) => {
+    let peliculasFiltradas = listaPeliculas.filter(
+      (pelicula) => pelicula.nombrePeli !== peliculaBorrar.nombrePeli
+    );
+    setListaPeliculas(peliculasFiltradas);
+  };
+
   return (
     <>
       <section className="container my-4">
@@ -104,7 +111,22 @@ const FormPeliculas = () => {
           </div>
         </div>
       </section>
-      <ListaPeliculas listaPeliculas={listaPeliculas} />
+
+      {listaPeliculas.length === 0 ? (
+        <h3 className="text-center text-white my-3">
+          <img
+            src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Film%20Projector.png"
+            alt="Film Projector"
+            className="iconFilmProjector mx-2"
+          />
+          Aún no hay peliculas
+        </h3>
+      ) : (
+        <ListaPeliculas
+          listaPeliculas={listaPeliculas}
+          eliminarPelicula={eliminarPelicula}
+        />
+      )}
     </>
   );
 };

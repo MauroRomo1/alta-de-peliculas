@@ -1,4 +1,4 @@
-const CardPelicula = ({ pelicula }) => {
+const CardPelicula = ({ pelicula, eliminarPelicula }) => {
   return (
     <article className="col">
       <div className="card h-100">
@@ -15,7 +15,13 @@ const CardPelicula = ({ pelicula }) => {
           <p className="card-text">{pelicula.descripcionPeli}</p>
         </div>
         <div className="card-footer d-grid">
-          <button className="btn btn-danger">Borrar</button>
+          <button
+            type="button"
+            className="btn btn-danger"
+            onClick={() => eliminarPelicula(pelicula)}
+          >
+            Borrar
+          </button>
         </div>
       </div>
     </article>

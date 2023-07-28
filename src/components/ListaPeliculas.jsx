@@ -1,6 +1,6 @@
 import CardPelicula from "./CardPelicula";
 
-const ListaPeliculas = ({ listaPeliculas }) => {
+const ListaPeliculas = ({ listaPeliculas, eliminarPelicula }) => {
   return (
     <section className="container bg-white my-5">
       <h3 className="text-center my-3">
@@ -13,7 +13,11 @@ const ListaPeliculas = ({ listaPeliculas }) => {
       </h3>
       <div className="row row-cols-1 row-cols-md-3 g-4">
         {listaPeliculas.map((pelicula) => (
-          <CardPelicula key={pelicula.nombrePeli} pelicula={pelicula} />
+          <CardPelicula
+            key={pelicula.nombrePeli}
+            pelicula={pelicula}
+            eliminarPelicula={eliminarPelicula}
+          />
         ))}
       </div>
     </section>

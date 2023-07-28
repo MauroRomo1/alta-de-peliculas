@@ -22,7 +22,8 @@ header {
 }
 
 .iconClapperBoard,
-.iconFilmFrames {
+.iconFilmFrames,
+.iconFilmProjector {
   width: 50px;
   height: 50px;
 }
